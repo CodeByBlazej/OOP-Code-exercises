@@ -1,19 +1,33 @@
+class Product {
+  title = 'DEFAULT';
+  imageUrl;
+  description;
+  price;
+
+  constructor (title, image, desc, price) {
+    this.title = title;
+    this.imageUrl = image;
+    this.description = desc;
+    this.price = price;
+  }
+}
+
+console.log(new Product());
+
 const productList = {
   products: [
-    {
-      title: 'A Pillow',
-      imageUrl:
-        'ADD LATEEEEEEEEEEEEEEEEEEER',
-      price: 19.99,
-      description: 'A soft pillow!',
-    },
-    {
-      title: 'A Carpet',
-      imageUrl:
-        'ADD LATEEEEEEEEEEEEEEEEER',
-      price: 89.99,
-      description: 'A carpet which you might like - or not.',
-    }
+    new Product(
+      'A Pillow',
+      'ADD LATEEEEEEEEEEEEEEEEEEER',
+      'A soft pillow!',
+      19.99
+    ),
+    new Product(
+      'A Carpet',
+      'ADD LATEEEEEEEEEEEEEEEEER',
+      'A carpet which you might like - or not.',
+      89.99
+    ),
   ],
   render() {
     const renderHook = document.getElementById('app');
@@ -36,7 +50,7 @@ const productList = {
       prodList.append(prodEl);
     }
     renderHook.append(prodList);
-  }
+  },
 };
 
 productList.render();
